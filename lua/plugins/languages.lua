@@ -35,7 +35,6 @@ return {
 				ensure_installed = {
 					-- lua
 					"lua-language-server",
-					"stylua",
 
 					-- go
 					"gopls",
@@ -66,7 +65,7 @@ return {
 			})
 		end,
 	},
-	--[[{
+	{
 		"neovim/nvim-lspconfig",
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -75,11 +74,6 @@ return {
 			-- lua
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
-				settings = {
-					format = {
-						enable = false,
-					},
-				},
 			})
 
 			-- go
@@ -114,8 +108,7 @@ return {
 			vim.keymap.set("n", "gd", vim.lsp.buf.implementation, {})
 			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
 		end,
-	}, ]]
-	--
+	},
 	{
 		"stevearc/conform.nvim",
 		event = { "BufReadPre", "BufNewFile" },
@@ -123,13 +116,13 @@ return {
 			local conform = require("conform")
 			conform.setup({
 				formatters_by_ft = {
-					lua = { "stylua" },
 					javascript = { "prettier" },
 					typescript = { "prettier" },
 					go = { "golines", "gofumpt" },
 					css = { "prettier" },
 					html = { "prettier" },
 					yaml = { "prettier" },
+					json = { "prettier" },
 					markdown = { "prettier" },
 				},
 				format_on_save = {
