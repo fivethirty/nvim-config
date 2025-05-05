@@ -4,7 +4,7 @@ return {
 	config = function()
 		require("lualine").setup({
 			options = {
-				disabled_filetypes = { "NvimTree" },
+				disabled_filetypes = { "NvimTree", "alpha" },
 			},
 		})
 	end,
