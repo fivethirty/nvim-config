@@ -57,6 +57,9 @@ return {
 					"typescript-language-server",
 					"eslint-lsp",
 
+					-- html
+					"html-lsp",
+
 					-- prettier
 					"prettier",
 				},
@@ -99,6 +102,11 @@ return {
 
 			-- [java|type]script
 			lspconfig.ts_ls.setup({
+				capabilities = capabilities,
+			})
+
+			-- html
+			lspconfig.html.setup({
 				capabilities = capabilities,
 			})
 
