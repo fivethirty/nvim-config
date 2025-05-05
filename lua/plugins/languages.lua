@@ -39,9 +39,6 @@ return {
 
 					-- go
 					"gopls",
-					"golines",
-					"gofumpt",
-					"golangci-lint-langserver",
 
 					-- bash
 					-- the language server uses shfmt and shellcheck
@@ -80,11 +77,6 @@ return {
 			-- go
 			lspconfig.gopls.setup({
 				capabilities = capabilities,
-				settings = {
-					gopls = {
-						gofumpt = true,
-					},
-				},
 			})
 
 			-- bash
