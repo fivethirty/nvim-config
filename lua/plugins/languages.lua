@@ -66,7 +66,7 @@ return {
 			})
 		end,
 	},
-	{
+	--[[{
 		"neovim/nvim-lspconfig",
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -114,7 +114,8 @@ return {
 			vim.keymap.set("n", "gd", vim.lsp.buf.implementation, {})
 			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
 		end,
-	},
+	}, ]]
+	--
 	{
 		"stevearc/conform.nvim",
 		event = { "BufReadPre", "BufNewFile" },
