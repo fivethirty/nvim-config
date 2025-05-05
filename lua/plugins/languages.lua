@@ -80,9 +80,11 @@ return {
 			-- go
 			lspconfig.gopls.setup({
 				capabilities = capabilities,
-			})
-			lspconfig.golangci_lint_ls.setup({
-				capabilities = capabilities,
+				settings = {
+					gopls = {
+						gofumpt = true,
+					},
+				},
 			})
 
 			-- bash
@@ -136,7 +138,6 @@ return {
 					},
 				},
 				formatters_by_ft = {
-					go = { "golines", "gofumpt" },
 					lua = { "stylua" },
 					javascript = { "prettier" },
 					typescript = { "prettier" },
