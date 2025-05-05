@@ -11,6 +11,19 @@ return {
 				enable = true,
 				show_on_dirs = true,
 			},
+			view = {
+				signcolumn = "no",
+			},
+			renderer = {
+				highlight_diagnostics = "name",
+				highlight_hidden = "name",
+				icons = {
+					diagnostics_placement = "after",
+				},
+			},
+			update_focused_file = {
+				enable = true,
+			},
 		})
 		vim.keymap.set("n", "<leader>ff", ":NvimTreeToggle<CR>", { desc = "NvimTree toggle filesystem" })
 		if vim.fn.argc(-1) == 0 then
