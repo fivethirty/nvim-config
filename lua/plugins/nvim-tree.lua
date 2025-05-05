@@ -12,6 +12,9 @@ return {
 				show_on_dirs = true,
 			},
 		})
-		vim.keymap.set("n", "<C-f>", ":NvimTreeToggle<CR>", { desc = "NvimTree toggle filesystem" })
+		vim.keymap.set("n", "<leader>ff", ":NvimTreeToggle<CR>", { desc = "NvimTree toggle filesystem" })
+		if vim.fn.argc(-1) == 0 then
+			vim.cmd("NvimTreeOpen")
+		end
 	end,
 }
