@@ -1,3 +1,3 @@
-need ripgrep for telescope live grep
+# nvim-config
 
-need nvm for lsps
+How I configure neovim. Perennially work in progress.
