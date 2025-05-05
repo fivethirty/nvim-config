@@ -115,10 +115,21 @@ return {
 		config = function()
 			local conform = require("conform")
 			conform.setup({
+				formatters = {
+					prettier = {
+						require_cwd = true,
+						cwd = require("conform.util").root_file({
+							".prettierrc",
+							".prettierrc.json",
+							".prettierrc.js",
+							".prettierignore",
+						}),
+					}
+				},
 				formatters_by_ft = {
+					go = { "golines", "gofumpt" },
 					javascript = { "prettier" },
 					typescript = { "prettier" },
-					go = { "golines", "gofumpt" },
 					css = { "prettier" },
 					html = { "prettier" },
 					yaml = { "prettier" },
