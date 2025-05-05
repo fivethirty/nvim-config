@@ -1,3 +1,3 @@
 # nvim-config
 
-How I configure neovim. Perennially work in progress.
+How I configure neovim. Perennially a work in progress.
