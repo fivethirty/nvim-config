@@ -6,13 +6,5 @@
 	"workspace": {
 		"checkThirdParty": false,
 		"library": ["$VIMRUNTIME/lua/vim", "${3rd}/luv/library"]
-	},
-	"format": {
-		"defaultConfig": {
-			"indent_style": "tab",
-			"max_line_length": "140",
-			"quote_style": "double",
-			"call_arg_parentheses": "always"
-		}
 	}
 }

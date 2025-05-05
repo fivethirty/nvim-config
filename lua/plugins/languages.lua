@@ -35,6 +35,7 @@ return {
 				ensure_installed = {
 					-- lua
 					"lua-language-server",
+					"stylua",
 
 					-- go
 					"gopls",
@@ -114,20 +115,29 @@ return {
 		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			local conform = require("conform")
+			local util = require("conform.util")
 			conform.setup({
 				formatters = {
 					prettier = {
 						require_cwd = true,
-						cwd = require("conform.util").root_file({
+						cwd = util.root_file({
 							".prettierrc",
 							".prettierrc.json",
 							".prettierrc.js",
 							".prettierignore",
 						}),
-					}
+					},
+					stylua = {
+						require_cwd = true,
+						cwd = util.root_file({
+							".stylua.toml",
+							"stylua.toml",
+						}),
+					},
 				},
 				formatters_by_ft = {
 					go = { "golines", "gofumpt" },
+					lua = { "stylua" },
 					javascript = { "prettier" },
 					typescript = { "prettier" },
 					css = { "prettier" },
