@@ -4,7 +4,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {
-	desc = "LSP Actins",
+	desc = "LSP Actions",
 	callback = function(event)
 		local opts = {
 			buffer = event.buf,
