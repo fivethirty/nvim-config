@@ -63,16 +63,21 @@ return {
 			})
 		end,
 	},
-	{
+	--[[ {
 		"neovim/nvim-lspconfig",
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
 
 			-- lua
-			lspconfig.lua_ls.setup({
-				capabilities = capabilities,
-			})
+			--	vim.lsp.config("lua-language-server", {
+			--capabilities = capabilities,
+			-- })
+			-- vim.lsp.enable("lua-language-server")
+
+			-- lspconfig.lua_ls.setup({
+			-- 		capabilities = capabilities,
+			--	})
 
 			-- go
 			lspconfig.gopls.setup({
@@ -103,7 +108,8 @@ return {
 			vim.keymap.set("n", "gd", vim.lsp.buf.implementation, {})
 			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
 		end,
-	},
+	}, ]]
+	--
 	{
 		"stevearc/conform.nvim",
 		event = { "BufReadPre", "BufNewFile" },
