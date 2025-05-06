@@ -57,52 +57,6 @@ return {
 		},
 	},
 	{
-		"neovim/nvim-lspconfig",
-		config = function()
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-			local lspconfig = require("lspconfig")
-
-			-- lua
-			--	vim.lsp.config("lua-language-server", {
-			--capabilities = capabilities,
-			-- })
-			-- vim.lsp.enable("lua-language-server")
-
-			-- lspconfig.lua_ls.setup({
-			-- 		capabilities = capabilities,
-			--	})
-
-			-- go
-			lspconfig.gopls.setup({
-				capabilities = capabilities,
-			})
-
-			-- bash
-			lspconfig.bashls.setup({
-				capabilities = capabilities,
-			})
-
-			-- css
-			lspconfig.cssls.setup({
-				capabilities = capabilities,
-			})
-
-			-- [java|type]script
-			lspconfig.ts_ls.setup({
-				capabilities = capabilities,
-			})
-
-			-- html
-			lspconfig.html.setup({
-				capabilities = capabilities,
-			})
-
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-			vim.keymap.set("n", "gd", vim.lsp.buf.implementation, {})
-			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
-		end,
-	},
-	{
 		"stevearc/conform.nvim",
 		event = { "BufReadPre", "BufNewFile" },
 		config = function()
@@ -112,7 +66,7 @@ return {
 				formatters = {
 					prettier = {
 						require_cwd = true,
-						cwd = require("conform.util").root_file({
+						cwd = util.root_file({
 							".prettierrc",
 							".prettierrc.json",
 							".prettierrc.js",
@@ -121,7 +75,7 @@ return {
 					},
 					stylua = {
 						require_cwd = true,
-						cwd = require("conform.util").root_file({
+						cwd = util.root_file({
 							".stylua.toml",
 							"stylua.toml",
 						}),
