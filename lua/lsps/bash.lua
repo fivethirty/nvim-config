@@ -1,6 +1,4 @@
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
 vim.lsp.config["bash-language-server"] = {
-	capabilities = capabilities,
 	cmd = { "bash-language-server", "start" },
 	settings = {
 		bashIde = {

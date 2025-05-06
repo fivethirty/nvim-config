@@ -1,6 +1,4 @@
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
 vim.lsp.config["typescript-language-server"] = {
-	capabilities = capabilities,
 	init_options = { hostInfo = "neovim" },
 	cmd = { "typescript-language-server", "--stdio" },
 	filetypes = {
