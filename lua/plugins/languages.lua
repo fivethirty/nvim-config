@@ -2,68 +2,61 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
-		config = function()
-			local config = require("nvim-treesitter.configs")
-			config.setup({
-				ensure_installed = {
-					"lua",
-					"go",
-					"gomod",
-					"gosum",
-					"gotmpl",
-					"javascript",
-					"html",
-					"css",
-					"bash",
-					"terraform",
-				},
-				highlight = { enable = true },
-				indent = { enable = true },
-			})
-		end,
+		opts = {
+			ensure_installed = {
+				"lua",
+				"go",
+				"gomod",
+				"gosum",
+				"gotmpl",
+				"javascript",
+				"html",
+				"css",
+				"bash",
+				"terraform",
+			},
+			highlight = { enable = true },
+			indent = { enable = true },
+		},
 	},
 	{
 		"williamboman/mason.nvim",
-		config = function()
-			require("mason").setup({})
-		end,
+		opts = {},
 	},
 	{
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		config = function()
-			require("mason-tool-installer").setup({
-				ensure_installed = {
-					-- lua
-					"lua-language-server",
-					"stylua",
+		opts = {
+			ensure_installed = {
+				-- lua
+				"lua-language-server",
+				"stylua",
 
-					-- go
-					"gopls",
+				-- go
+				"gopls",
 
-					-- bash
-					-- the language server uses shfmt and shellcheck
-					-- if present so no need to use them directly
-					"bash-language-server",
-					"shfmt",
-					"shellcheck",
+				-- bash
+				-- the language server uses shfmt and shellcheck
+				-- if present so no need to use them directly
+				"bash-language-server",
+				"shfmt",
+				"shellcheck",
 
-					-- css
-					"css-lsp",
+				-- css
+				"css-lsp",
 
-					-- [java|type]script
-					"typescript-language-server",
-					"eslint-lsp",
+				-- [java|type]script
+				"typescript-language-server",
+				"eslint-lsp",
 
-					-- html
-					"html-lsp",
+				-- html
+				"html-lsp",
 
-					-- prettier
-					"prettier",
-				},
-			})
-		end,
+				-- prettier
+				"prettier",
+			},
+		},
 	},
-	--[[ {
+	{
 		"neovim/nvim-lspconfig",
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -108,8 +101,7 @@ return {
 			vim.keymap.set("n", "gd", vim.lsp.buf.implementation, {})
 			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
 		end,
-	}, ]]
-	--
+	},
 	{
 		"stevearc/conform.nvim",
 		event = { "BufReadPre", "BufNewFile" },
@@ -120,7 +112,7 @@ return {
 				formatters = {
 					prettier = {
 						require_cwd = true,
-						cwd = util.root_file({
+						cwd = require("conform.util").root_file({
 							".prettierrc",
 							".prettierrc.json",
 							".prettierrc.js",
@@ -129,7 +121,7 @@ return {
 					},
 					stylua = {
 						require_cwd = true,
-						cwd = util.root_file({
+						cwd = require("conform.util").root_file({
 							".stylua.toml",
 							"stylua.toml",
 						}),
