@@ -3,7 +3,7 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	opts = {
 		options = {
-			disabled_filetypes = { "NvimTree", "alpha" },
+			disabled_filetypes = { "NvimTree", "alpha", "neotest-summary" },
 		},
 	},
 }
