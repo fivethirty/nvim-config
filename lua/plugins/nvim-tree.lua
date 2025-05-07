@@ -25,6 +25,6 @@ return {
 		},
 	},
 	keys = {
-		{ "<leader>ft", ":NvimTreeToggle<CR>", desc = "NvimTree toggle filesystem" },
+		{ "<leader>dd", ":NvimTreeToggle<CR>", desc = "NvimTree toggle filesystem" },
 	},
 }
