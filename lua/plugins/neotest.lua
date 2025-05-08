@@ -13,7 +13,7 @@ return {
 				adapters = {
 					require("neotest-golang")({
 						discovery = {
-							enabled = true,
+							enabled = false,
 							concurrent = 0,
 						},
 						running = {
