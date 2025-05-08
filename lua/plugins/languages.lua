@@ -13,6 +13,7 @@ return {
 
 				-- go
 				"gopls",
+				"delve",
 
 				-- bash
 				-- the language server uses shfmt and shellcheck
