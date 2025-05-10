@@ -13,6 +13,7 @@ return {
 
 				-- go
 				"gopls",
+				"golangci-lint-langserver",
 				"golines",
 				"delve",
 
