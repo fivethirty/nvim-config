@@ -25,7 +25,7 @@ return {
 		filters = {
 			git_ignored = true,
 			custom = {
-				"^\\..git$",
+				"^\\.git$",
 				"^\\.DS_Store$",
 			},
 		},
