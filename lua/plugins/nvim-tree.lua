@@ -15,13 +15,19 @@ return {
 		},
 		renderer = {
 			highlight_diagnostics = "name",
-			highlight_hidden = "name",
 			icons = {
 				diagnostics_placement = "after",
 			},
 		},
 		update_focused_file = {
 			enable = true,
+		},
+		filters = {
+			git_ignored = true,
+			custom = {
+				"^\\..git$",
+				"^\\.DS_Store$",
+			},
 		},
 	},
 	keys = {
