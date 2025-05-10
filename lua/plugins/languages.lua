@@ -13,6 +13,7 @@ return {
 
 				-- go
 				"gopls",
+				"golines",
 				"delve",
 
 				-- bash
