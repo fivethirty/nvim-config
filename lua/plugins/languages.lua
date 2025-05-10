@@ -63,6 +63,7 @@ return {
 					},
 				},
 				formatters_by_ft = {
+					go = { "golines" },
 					lua = { "stylua" },
 					javascript = { "prettier" },
 					typescript = { "prettier" },
