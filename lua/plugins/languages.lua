@@ -34,6 +34,10 @@ return {
 				-- html
 				"html-lsp",
 
+				--sql
+				"sqlls",
+				"sql-formatter",
+
 				-- prettier
 				"prettier",
 			},
@@ -74,9 +78,11 @@ return {
 					yaml = { "prettier" },
 					json = { "prettier" },
 					markdown = { "prettier" },
+					sql = { "sql_formatter" },
 				},
 				format_on_save = {
 					lsp_fallback = true,
+					lsp_format = "first",
 					async = false,
 					timeout_ms = 500,
 				},
